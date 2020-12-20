@@ -1,0 +1,106 @@
+Offset: 10
+Pin:  clk W MET5 
+Spacing: 3.5
+Pin:  clk_enable W MET5
+Pin: reset W MET5
+Pin: inp_I[0] W MET5 
+Pin: inp_I[1] W MET5
+Pin: inp_I[2] W MET5
+Pin: inp_I[3] W MET5
+Pin: inp_I[4] W MET5
+Pin: inp_I[5] W MET5
+Pin: inp_I[6] W MET5
+Pin: inp_I[7] W MET5
+Pin: inp_I[8] W MET5
+Pin: inp_I[9] W MET5
+Pin: inp_I[10] W MET5
+Pin: inp_I[11] W MET5
+Pin: inp_I[12] W MET5
+Pin: inp_I[13] W MET5
+Pin: inp_I[14] W MET5
+Pin: inp_I[15] W MET5
+Pin: inp_I[16] W MET5
+Pin: inp_I[17] W MET5
+Pin: inp_I[18] W MET5
+Pin: inp_I[19] W MET5
+Pin: inp_I[20] W MET5
+Pin: inp_I[21] W MET5
+Pin: inp_I[22] W MET5
+Pin: inp_I[23] W MET5
+Pin: inp_I[24] W MET5
+Pin: inp_I[25] W MET5
+Pin: inp_I[26] W MET5
+Pin: inp_I[27] W MET5
+Pin: inp_I[28] W MET5
+Pin: inp_I[29] W MET5
+Pin: inp_I[30] W MET5
+Pin: inp_I[31] W MET5
+Pin: inp_I[32] W MET5
+Pin: inp_I[33] W MET5
+Pin: inp_I[34] W MET5
+Pin: inp_I[35] W MET5
+Pin: inp_I[36] W MET5
+Pin: inp_I[37] W MET5
+Pin: inp_I[38] W MET5
+Pin: inp_Q[0] W MET5
+Pin: inp_Q[1] W MET5
+Pin: inp_Q[2] W MET5
+Pin: inp_Q[3] W MET5
+Pin: inp_Q[4] W MET5
+Pin: inp_Q[5] W MET5
+Pin: inp_Q[6] W MET5
+Pin: inp_Q[7] W MET5
+Pin: inp_Q[8] W MET5
+Pin: inp_Q[9] W MET5
+Pin: inp_Q[10] W MET5
+Pin: inp_Q[11] W MET5
+Pin: inp_Q[12] W MET5
+Pin: inp_Q[13] W MET5
+Pin: inp_Q[14] W MET5
+Pin: inp_Q[15] W MET5
+Pin: inp_Q[16] W MET5
+Pin: inp_Q[17] W MET5
+Pin: inp_Q[18] W MET5
+Pin: inp_Q[19] W MET5
+Pin: inp_Q[20] W MET5
+Pin: inp_Q[21] W MET5
+Pin: inp_Q[22] W MET5
+Pin: inp_Q[23] W MET5
+Pin: inp_Q[24] W MET5
+Pin: inp_Q[25] W MET5
+Pin: inp_Q[26] W MET5
+Pin: inp_Q[27] W MET5
+Pin: inp_Q[28] W MET5
+Pin: inp_Q[29] W MET5
+Pin: inp_Q[30] W MET5
+Pin: inp_Q[31] W MET5
+Pin: inp_Q[32] W MET5
+Pin: inp_Q[33] W MET5
+Pin: inp_Q[34] W MET5
+Pin: inp_Q[35] W MET5
+Pin: inp_Q[36] W MET5
+Pin: inp_Q[37] W MET5
+Pin: inp_Q[38] W MET5
+Offset: 10
+Pin: out_fm[0] E MET4
+Spacing: 20
+
+Pin: out_fm[1] E MET4
+Pin: out_fm[2] E MET4
+Pin: out_fm[3] E MET4
+Pin: out_fm[4] E MET4
+Pin: out_fm[5] E MET4
+Pin: out_fm[6] E MET4
+Pin: out_fm[7] E MET4
+Pin: out_fm[8] E MET4
+Pin: out_fm[9] E MET4
+Pin: out_fm[10] E MET4
+Pin: out_fm[11] E MET4
+Pin: out_fm[12] E MET4
+Pin: out_fm[13] E MET4
+Pin: ce_out E MET4
+
+
+
+
+

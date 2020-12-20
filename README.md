@@ -8,7 +8,7 @@
 В ветке Current_branch ведется разработка проекта, туда в первую очередь вносятся различные изменения, в том числе тестовые.
 В ветке main содержится актуальная, работоспособная версия проекта. Все исходные файлы, требующиеся для сборки проекта находятся здесь.
 ## Описание файлов
-
+### AGC
 AGC.v - Описание верхнего модуля блока АРУ на языке Verilog.
 EXPONENTIAL_AVERAGING_FILTER.v - описание фильтра экспоненциального усреднения в составе блока АРУ на языке Verilog.
 EXP_APPROX_CHEBYSHEV.v - описание блока аппроксимации экспоненты полиномами Чебышева на языке Verilog.
@@ -24,7 +24,7 @@ X-FAB_typ_AGC.tcl, X-FAB_SLOW_AGC.tcl, X-FAB_FAST_AGC.tcl - скрипты, со
 MyModule_synth_AGC_regs.tcl, MyModule_synth_AGC_regs_SLOW.tcl, MyModule_synth_AGC_regs_FAST.tcl - скрипты, содержащие команды для RTL Compiler для случаев typical corner, slow corner и fast corner соответственно. Используются на этапе Synthesis.
 MMMC_AGC_regs.tcl - скрипт, содержащий информацию о библиотечных ячейках при различных условиях. Используется на этапе Layout.
 Encounter_AGC.tcl - скрипт, содержащий команды для Encounter, необходимые для генерации топологии. Используется на этапе Layout
-
+### FM_demodulator
 FM_demodulator.v - Описание верхнего модуля блока ФМ-демодулятора на языке Verilog.
 FM_demodulator_tb.v - тестовое окружения для проведения симуляций на этапе Behavioral и после этапа Synthesis.
 FM_demodulator_tb_layout.v - тестовое окружения для проведения симуляций после этапа Layout.

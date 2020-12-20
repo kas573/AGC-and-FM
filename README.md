@@ -37,3 +37,19 @@ X-FAB_typ_FM.tcl , X-FAB_SLOW_FM.tcl, X-FAB_FAST_FM.tcl - скрипты, сод
 MyModule_synth_FM.tcl, MyModule_synth_SLOW.tcl, MyModule_synth_FAST.tcl - скрипты, содержащие команды для RTL Compiler для случаев typical corner, slow corner и fast corner соответственно. Используются на этапе Synthesis.
 MMMC_FM.tcl - скрипт, содержащий информацию о библиотечных ячейках при различных условиях. Используется на этапе Layout.
 Encounter_FM.tcl  - скрипт, содержащий команды для Encounter, необходимые для генерации топологии. Используется на этапе Layout
+## Сборка проекта
+### AGC
+1. В папке AGC создать папку RTL_Compiler.
+2. Открыть в папке RTL_Compiler терминал.
+3. Ввести команду RTL_Compiler ../Scripts/MyModule_synth_AGC_regs.tcl. В результате будут получены для случая typical corner: нетлист с привязкой к технологической библиотеке и sdc файл (расположены в AGC/Outputs/Synthesis/TYP_CORNER), а также временной отчет и отчет по площади (расположены в AGC/Reports/Synthesis/TYP_CORNER). При необходимости, можно проделать то же самое для прочих corner.
+4. В папке AGC создать папку Encounter.
+5. Открыть в папке Encounter терминал.
+6. Ввести команду Encounter ../Scripts/Encounter_AGC.tcl. В результате будут получены: нетлист для симуляции в Incisive (требуется использовать тестбенч AGC_tb_layout.v), физический нетлист для импорта в Virtuoso и последующей верификации, def файл, sdf файл (все файлы расположены в AGC/Outputs/Layout).
+
+### FM_demodulator
+1. В папке FM_demodulator создать папку RTL_Compiler.
+2. Открыть в папке RTL_Compiler терминал.
+3. Ввести команду RTL_Compiler ../Scripts/MyModule_synth_FM.tcl. В результате будут получены для случая typical corner: нетлист с привязкой к технологической библиотеке и sdc файл (расположены в FM_demodulator/Outputs/Synthesis/TYP_CORNER), а также временной отчет и отчет по площади (расположены в FM_demodulator/Reports/Synthesis/TYP_CORNER). При необходимости, можно проделать то же самое для прочих corner.
+4. В папке FM_demodulator создать папку Encounter.
+5. Открыть в папке Encounter терминал.
+6. Ввести команду Encounter ../Scripts/Encounter_FM.tcl. В результате будут получены: нетлист для симуляции в Incisive (требуется использовать тестбенч FM_demodulator_tb_layout.v), физический нетлист для импорта в Virtuoso и последующей верификации, def файл, sdf файл (все файлы расположены в FM_demodulator/Outputs/Layout).

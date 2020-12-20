@@ -1,0 +1,67 @@
+Offset: 10
+Pin:  clk W MET5 
+Spacing: 20
+Pin:  clk_enable W MET5
+Pin: reset W MET5
+Pin: inp_agc[0] W MET5 
+Pin: inp_agc[1] W MET5
+Pin: inp_agc[2] W MET5
+Pin: inp_agc[3] W MET5
+Pin: inp_agc[4] W MET5
+Pin: inp_agc[5] W MET5
+Pin: inp_agc[6] W MET5
+Pin: inp_agc[7] W MET5
+Pin: inp_agc[8] W MET5
+Pin: inp_agc[9] W MET5
+Pin: inp_agc[10] W MET5
+Pin: inp_agc[11] W MET5
+Pin: inp_agc[12] W MET5
+
+Offset: 10
+Pin: out_agc[0] E MET4
+Spacing: 2
+
+Pin: out_agc[1] E MET4
+Pin: out_agc[2] E MET4
+Pin: out_agc[3] E MET4
+Pin: out_agc[4] E MET4
+Pin: out_agc[5] E MET4
+Pin: out_agc[6] E MET4
+Pin: out_agc[7] E MET4
+Pin: out_agc[8] E MET4
+Pin: out_agc[9] E MET4
+Pin: out_agc[10] E MET4
+Pin: out_agc[11] E MET4
+Pin: out_agc[12] E MET4
+Pin: out_agc[13] E MET4
+Pin: out_agc[14] E MET4
+Pin: out_agc[15] E MET4
+Pin: out_agc[16] E MET4
+Pin: out_agc[17] E MET4
+Pin: out_agc[18] E MET4
+Pin: out_agc[19] E MET4
+Pin: out_agc[20] E MET4
+Pin: out_agc[21] E MET4
+Pin: out_agc[22] E MET4
+Pin: out_agc[23] E MET4
+Pin: out_agc[24] E MET4
+Pin: out_agc[25] E MET4
+Pin: out_agc[26] E MET4
+Pin: out_agc[27] E MET4
+Pin: out_agc[28] E MET4
+Pin: out_agc[29] E MET4
+Pin: out_agc[30] E MET4
+Pin: out_agc[31] E MET4
+Pin: out_agc[32] E MET4
+Pin: out_agc[33] E MET4
+Pin: out_agc[34] E MET4
+Pin: out_agc[35] E MET4
+Pin: out_agc[36] E MET4
+Pin: out_agc[37] E MET4
+Pin: out_agc[38] E MET4
+Pin: ce_out E MET4
+
+
+
+
+

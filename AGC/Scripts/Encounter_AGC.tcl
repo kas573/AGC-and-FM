@@ -52,7 +52,6 @@ addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit MET3 -max_
 #Horizontal power stripes creation
 sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { MET1 METTPL } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { MET1 METTPL } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { MET1 METTPL }
 #PrePlace setup timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -prePlace -idealClock -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_prePlace -outDir ../Reports/Layout/timingReports/prePlace
 setMultiCpuUsage -localCpu 8 -cpuPerRemoteHost 1 -remoteHost 0 -keepLicense true
 #Place standart cells
@@ -60,26 +59,21 @@ setDistributeHost -local
 setPlaceMode -fp false
 placeDesign
 #PreCTS setup timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -preCTS -idealClock -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_preCTS -outDir ../Reports/Layout/timingReports/preCTSsetup
 #PreCTS hold timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -preCTS -hold -idealClock -pathReports -slackReports -numPaths 50 -prefix AGC_preCTS -outDir ../Reports/Layout/timingReports/preCTShold
 #PreCTS optimization
 setOptMode -fixCap true -fixTran true -fixFanoutLoad false
 optDesign -preCTS
 #PreCTS timing report after optimization
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -preCTS -idealClock -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_preCTS -outDir ../Reports/Layout/timingReports/preCTSsetup_optimized
 #Clock tree synthesis
 createClockTreeSpec -bufferList BUHDX12 -file Clock.ctstch
 setCTSMode -engine ck
 clockDesign -specFile Clock.ctstch -outDir clock_report -fixedInstBeforeCTS
 #PostCTS setup timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_postCTS -outDir ../Reports/Layout/timingReports/PostCTSsetup
 #PostCTS hold timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postCTS -hold -pathReports -slackReports -numPaths 50 -prefix AGC_postCTS -outDir ../Reports/Layout/timingReports/PostCTShold
 #PostCTS optimization
 setOptMode -fixCap true -fixTran true -fixFanoutLoad false
@@ -89,7 +83,6 @@ setOptMode -fixCap false -fixTran false -fixFanoutLoad false
 optDesign -postCTS -incr
 optDesign -postCTS -hold -incr
 #PostCTS setup timing report after optimization
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postCTS -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_postCTS -outDir ../Reports/Layout/timingReports/PostCTSsetup_optimized
 #Rooting
 setNanoRouteMode -quiet -routeInsertAntennaDiode 1
@@ -104,10 +97,8 @@ setNanoRouteMode -quiet -routeWithSiDriven false
 routeDesign -globalDetail
 setAnalysisMode -analysisType onChipVariation -skew true -clockPropagation sdcControl
 #PostRoute setup timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_postRoute -outDir ../Reports/Layout/timingReports/PostRoutesetup
 #PostRoute hold timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix AGC_postRoute -outDir ../Reports/Layout/timingReports/PostRoutehold
 #DRC errors and timing violations fixing
 setOptMode -fixCap false -fixTran false -fixFanoutLoad false
@@ -119,10 +110,8 @@ optDesign -postRoute -hold -incr
 setOptMode -fixCap false -fixTran false -fixFanoutLoad false
 optDesign -postRoute -hold -incr
 #PostRoute setup timing report after DRC errors fixing
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postRoute -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_postRoute -outDir ../Reports/Layout/timingReports/PostRoutesetupDRCfixed
 #PostRoute hold timing report after DRC errors and timing violations fixing
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -postRoute -hold -pathReports -slackReports -numPaths 50 -prefix AGC_postRoute -outDir ../Reports/Layout/timingReports/PostRouteholdDRCfixed
 #Placing fillers
 getFillerMode -quiet
@@ -137,10 +126,8 @@ verifyConnectivity -type all -report ../Reports/Layout/Verify/AGC.conn.rpt -erro
 setExtractRCMode -engine postRoute -effortLevel signoff
 extractRC
 #SignOff setup timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -signoff -pathReports -drvReports -slackReports -numPaths 50 -prefix AGC_signOff -outDir ../Reports/Layout/timingReports/SignOffsetup
 #SignOff hold timing report
-redirect -quiet {set honorDomain [getAnalysisMode -honorClockDomains]} > /dev/null
 timeDesign -signoff -hold -pathReports -slackReports -numPaths 50 -prefix AGC_signOff -outDir ../Reports/Layout/timingReports/SignOffhold
 all_hold_analysis_views 
 all_setup_analysis_views 
